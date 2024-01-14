@@ -1,17 +1,18 @@
 import { Avatar, Box, Flex, Button, Text } from '@chakra-ui/react';
 
-import { SkeletonCircle } from '@chakra-ui/react';
+// import { SkeletonCircle } from '@chakra-ui/react';
 
-const PoostHeader = () => {
+const PoostHeader = ({ username, avatar }) => {
   return (
     <Flex
       justifyContent={'space-between'}
       alignItems={'center'}
       w={'full'}
-      my={2}
+      my={4}
     >
       <Flex alignItems={'center'} gap={2}>
-        <Avatar src={''} alt="user profile pic" size={'sm'} />
+        <Avatar src={avatar} alt="user profile pic" size={'sm'} />
+
         {/* {creatorProfile ? (
           <Link to={`/${''}`}>
             <Avatar src={''} alt="user profile pic" size={'sm'} />
@@ -21,6 +22,7 @@ const PoostHeader = () => {
         )} */}
 
         <Flex fontSize={12} fontWeight={'bold'} gap="2">
+          {username}
           {/* {creatorProfile ? (
             <Link to={`/${creatorProfile.username}`}>
               {creatorProfile.username}
